@@ -26,7 +26,7 @@ voices=engine.getProperty('voices')
 print(voices)
 print(voices[0].id)
 engine.setProperty('voice',voices[0].id)
-wolframalpha_app_id = 'YWXKJ8-VHH23GHEQ6'
+wolframalpha_app_id = '[your]'
 
 ###########################################################
 ######################### to say ##########################
@@ -478,8 +478,8 @@ def sendmail(to, content):
     server=smtplib.SMTP('smtp.gmail.com', 587)
     server.ehol()
     server.starttls()
-    server.login('susmitpathak152.mcps@gmail.com' , 'Susmit159')
-    server.sendmail('susmitpathak152.mcps@gmail.com',to,content)
+    server.login('your mail' , 'password')
+    server.sendmail('your mail',to,content)
     server.close()
 
 def cpu():
@@ -508,7 +508,7 @@ if __name__=='__main__':
     print("whats your name")
     speak("whats your name")
     e=str(takecommand(recognizer, microphone)).lower()
-    if 'susmit' in e:
+    if 'name' in e:
         print("Welcome Sir, How can I help you ?")
         speak("Welcome Sir, How can I help you")
     else:
@@ -543,14 +543,14 @@ if __name__=='__main__':
             query=query.replace('play','')
             #f2.write(query+' '+ str(datetime.datetime.now()))
             if 'music' in query :
-                music_dir="C:/Users/user/Desktop/susmit/A.I Mark1 without net/music"
+                music_dir="path"
                 music=os.listdir(music_dir)
                 os.startfile(os.path.join(music_dir, music[0]))
                 
             elif 'song' in query :
                 query=query.replace('song','')
                 query=query+'.mp3'
-                music_dir="C:/Users/user/Desktop/susmit/A.I Mark1 without net/music"
+                music_dir="path"
                 music=os.listdir(music_dir)
                 print(music)
                 length=len(music)
@@ -558,7 +558,7 @@ if __name__=='__main__':
                 for i in range(0,length-1):
                     if query==music[i]:
                         print(music[i])
-                        audio=MP3("C:/Users/user/Desktop/susmit/A.I Mark1 without net/music/"+music[i])
+                        audio=MP3("path/"+music[i])
                         s=audio.info.length
                         os.startfile(os.path.join(music_dir,music[i]))
                         time.sleep(s+5)
@@ -588,7 +588,7 @@ if __name__=='__main__':
                 for i in range(0,length-1):
                     if query==videos[i]:
                         print(videos[i])
-                        audio=MP3("C:/Users/user/Desktop/susmit/A.I Mark1 without net/music/"+music[i])
+                        audio=MP3("path/"+music[i])
                         s=audio.info.length
                         os.startfile(os.path.join(music_dir,music[i]))
                         time.sleep(s+5)
@@ -661,7 +661,7 @@ if __name__=='__main__':
             print("which type of news you want to listen")
             speak("which type of news you want to listen")
             r=str(takecommand(recognizer, microphone)).lower()
-            obj = requests.get('http://newsapi.org/v2/top-headlines?country=us&category='+r+'apiKey=b5937ce9f8bd4e28b029e153749ea5e7').json()
+            obj = requests.get('http://newsapi.org/v2/top-headlines?country=us&category='+r+'apiKey=[your]').json()
             i = 1
             data=obj
             print(data)
